@@ -1,1 +1,40 @@
 
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Diagnostics; 
+using System.IO; 
+ 
+ 
+namespace abc
+{
+class db_school_connection 
+{
+public static MySqlConnection con = new MySqlConnection("Server=localhost;userid=root;password=0000;database=db_school;charSet=utf8;");
+
+ 
+public static void open_connection()
+{
+if (con.State == ConnectionState.Closed)
+{ 
+ con.Open();
+}
+else
+{
+}
+}
+
+ 
+public static void close_connection()
+{
+if(con.State == ConnectionState.Open)
+{
+ con.Close();
+}
+}
+}//end Of connection class
+
+ 
+} //end Of name space
